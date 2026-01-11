@@ -1,0 +1,122 @@
+/* ============================================
+   Stats Section Styles
+   ============================================ */
+
+.stats {
+    position: relative;
+    padding: 80px 0;
+    background: var(--bg-secondary);
+    overflow: hidden;
+}
+
+.stats__bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.stats__line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    opacity: 0.2;
+}
+
+.stats__line--1 {
+    top: 30%;
+    left: 0;
+    right: 0;
+    animation: shimmer 3s linear infinite;
+}
+
+.stats__line--2 {
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    animation: shimmer 3s linear infinite reverse;
+}
+
+/* Grid */
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Item */
+.stats__item {
+    position: relative;
+    text-align: center;
+    padding: 40px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all var(--transition-medium);
+}
+
+.stats__item.animate-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.stats__item:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-4px);
+}
+
+.stats__value {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.stats__suffix {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.stats__label {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.stats__glow {
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(245, 166, 35, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.stats__item:hover .stats__glow {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .stats__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats__value {
+        font-size: 2.5rem;
+    }
+}

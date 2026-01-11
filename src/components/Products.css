@@ -1,0 +1,263 @@
+/* ============================================
+   Products Section Styles
+   ============================================ */
+
+.products {
+    position: relative;
+    overflow: hidden;
+}
+
+.products__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.products__bg-gradient {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* Header */
+.products__header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.products__label {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+}
+
+.products__title {
+    margin-bottom: 20px;
+}
+
+.products__subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Content */
+.products__content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Tabs */
+.products__tabs {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.products__tab {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 16px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    color: var(--text-secondary);
+    transition: all var(--transition-medium);
+    min-width: 160px;
+}
+
+.products__tab:hover {
+    border-color: rgba(245, 166, 35, 0.3);
+    background: var(--bg-card-hover);
+}
+
+.products__tab.active {
+    border-color: var(--accent-gold);
+    background: rgba(245, 166, 35, 0.1);
+}
+
+.products__tab-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+}
+
+.products__tab-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Showcase */
+.products__showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Visual */
+.products__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products__tyre-wrapper {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.products__tyre-glow {
+    position: absolute;
+    inset: -50px;
+    background: radial-gradient(circle, rgba(245, 166, 35, 0.15) 0%, transparent 60%);
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.products__tyre-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+.products__tyre-ring {
+    position: absolute;
+    inset: -25px;
+    border: 2px dashed rgba(245, 166, 35, 0.2);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+}
+
+/* Info */
+.products__info {
+    padding: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 32px;
+}
+
+.products__info-category {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-gold);
+    padding: 8px 16px;
+    background: rgba(245, 166, 35, 0.1);
+    border-radius: 50px;
+    margin-bottom: 16px;
+}
+
+.products__info-name {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.products__info-tagline {
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.products__info-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.products__info-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.products__info-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.products__info-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.products__info-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .products__showcase {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .products__visual {
+        order: 1;
+    }
+
+    .products__info {
+        order: 2;
+    }
+
+    .products__tyre-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .products__tabs {
+        flex-direction: column;
+    }
+
+    .products__tab {
+        min-width: 100%;
+    }
+
+    .products__info {
+        padding: 24px;
+    }
+
+    .products__info-footer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .products__info-footer .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
