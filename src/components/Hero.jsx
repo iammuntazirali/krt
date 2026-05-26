@@ -172,7 +172,7 @@ const Hero = () => {
                     </div>
                     <div className="hero__tag hero__tag--3 animate-fadeInRight delay-500">
                         <span className="hero__tag-icon">🛡️</span>
-                        2 Year Warranty
+                        6 Months Warranty
                     </div>
                 </div>
             </div>
